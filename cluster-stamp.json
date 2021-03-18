@@ -40,7 +40,7 @@
             }
         },
         "location": {
-            "defaultValue": "eastus2",
+            "defaultValue": "westus2",
             "type": "string",
             "allowedValues": [
                 "australiaeast",
@@ -94,7 +94,7 @@
             }
         },
         "kubernetesVersion": {
-            "defaultValue": "1.19.3",
+            "defaultValue": "1.19.7",
             "type": "string"
         },
         "acrResourceGroupName": {
@@ -178,7 +178,7 @@
 
         "nodeResourceGroupName": "[concat('rg-', variables('clusterName'), '-nodepools')]",
         "clusterName": "[concat('aks-', variables('subRgUniqueString'))]",
-        "logAnalyticsWorkspaceName": "[concat('la-', variables('clusterName'))]",
+        "logAnalyticsWorkspaceName": "[concat('la-ms-', variables('clusterName'))]",
         "containerInsightsSolutionName": "[concat('ContainerInsights(', variables('logAnalyticsWorkspaceName'),')')]",
         "defaultAcrName": "[concat('acraks', variables('subRgUniqueString'))]",
 
@@ -188,7 +188,7 @@
         "agwName": "[concat( 'apw-', variables('clusterName')) ]",
         "apwResourceId": "[resourceId('Microsoft.Network/applicationGateways', variables('agwName'))]",
 
-        "keyVaultName": "[concat( 'kv-', variables('clusterName'))]",
+        "keyVaultName": "[concat( 'kv-ms-', variables('clusterName'))]",
 
         "aiNamePrefix": "ai",
         "nestedACRDeploymentName": "[concat('azuredeploy-acr-',parameters('acrResourceGroupName'),parameters('environmentName'))]",
@@ -835,7 +835,7 @@
             ]
         },
         {
-            "name": "PodFailedScheduledQuery",
+            "name": "PodFailedScheduledQueried",
             "type": "microsoft.insights/scheduledQueryRules",
             "apiVersion": "2018-04-16",
             "location": "[parameters('location')]",

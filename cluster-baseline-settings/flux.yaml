@@ -70,7 +70,7 @@ spec:
         # az acr import --source docker.io/fluxcd/flux:1.19.0 -n <your-acr-instance-name>
         # and then set this to
         # image: <your-acr-instance-name>.azurecr.io/fluxcd/flux:1.19.0
-        image: docker.io/fluxcd/flux:1.19.0
+        image: acrakspf56l3rzuepr6.azurecr.io/fluxcd/flux:1.19.0
         imagePullPolicy: IfNotPresent
         securityContext:
           capabilities:
@@ -151,7 +151,7 @@ spec:
         # az acr import --source docker.io/library/memcached:1.5.20 -n <your-acr-instance-name>
         # and then set this to
         # image: <your-acr-instance-name>.azurecr.io/library/memcached:1.5.20
-        image: library/memcached:1.5.20
+        image: acrakspf56l3rzuepr6.azurecr.io/library/memcached:1.5.20
         imagePullPolicy: IfNotPresent
         resources:
           requests:
